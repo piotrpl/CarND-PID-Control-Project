@@ -3,6 +3,28 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Solution
+
+Using Proportional(P), Integral(I) and Differential(D) parameters in a PID controller greatly contributed to stabilizing the steering angle of the car.
+
+PID, being a control loop feedback mechanism, receives the current cross-track error from the simulator and uses the three mentioned parameters to update the car's steering angle, where:
+
+- Proportional (P) coefficient provides a steering angle proportional to the current cross-track error. Usage of P causes the car to stay as close as possible to the region where the cross-track error would be zero.
+- Integral (I) coefficient uses accumulated cross-track error to determine the steering angle. By accumulating the errors, it provides a mechanism to correct the steering angle in case there is a mismatch between intended and actual steering angles.
+- Differential (D) coefficient mitigates the overshooting issue caused by usage of the P-controller which results in the oscillation that builds up over time.
+
+The final hyperparameters were chosen and adjusted through manual tuning where I started with the proportional constant of value 0.1.
+This value proved to be a good start that allowed the car to drive "safely" around the track with some oscillation which was growing as I was increasing the throttle. 
+The oscillation was mitigated by using and fine tuning the differential component.
+
+Changes to the Integral coefficient proved to have much low impact on the final, stable drive around the track.
+
+[Final ride](https://www.dropbox.com/s/22fgo2u6sjppxf7/PID.m4v?dl=0)
+P = 0.1
+I = 0.001
+D = 1.0
+
+
 ## Dependencies
 
 * cmake >= 3.5
