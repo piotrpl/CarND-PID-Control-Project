@@ -17,9 +17,12 @@ The final hyperparameters were chosen and adjusted through manual tuning where I
 This value proved to be a good start that allowed the car to drive "safely" around the track with some oscillation which was growing as I was increasing the throttle. 
 The oscillation was mitigated by using and fine tuning the differential component.
 
-Changes to the Integral coefficient proved to have much low impact on the final, stable drive around the track.
+Changes to the Integral coefficient proved to have much low impact on the stable drive around the track compared to other two parameters.
 
-[Final ride](https://www.dropbox.com/s/22fgo2u6sjppxf7/PID.m4v?dl=0)
+[Video - Final ride](https://www.dropbox.com/s/22fgo2u6sjppxf7/PID.m4v?dl=0)
+
+Parameters:
+
 P = 0.1
 I = 0.001
 D = 1.0
